@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   imports = [
     ./hardware-configuration.nix
-    ./networking.nix # generated at runtime by nixos-infect
+    # ./networking.nix # generated at runtime by nixos-infect
     
   ];
 
@@ -21,6 +21,8 @@
   boot.cleanTmpDir = true;
   networking.hostName = "kitsault";
   networking.firewall.allowPing = true;
+
+  networking.networkmanager.enable = true;
 
   services.openssh = {
     enable = true;
