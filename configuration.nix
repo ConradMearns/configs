@@ -11,7 +11,7 @@
     zerotierone
     git
     vim
-    usbtils
+    usbutils
     pciutils
   ];
 
