@@ -19,9 +19,10 @@
   };
 
   boot.cleanTmpDir = true;
+
   networking.hostName = "kitsault";
   networking.firewall.allowPing = true;
-
+  networking.wireless.enable = true;
   networking.networkmanager.enable = true;
 
   services.openssh = {
