@@ -9,6 +9,10 @@
 
   environment.systemPackages = with pkgs; [
     zerotierone
+    git
+    vim
+    usbtils
+    pciutils
   ];
 
   services.zerotierone = {
