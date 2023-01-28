@@ -22,7 +22,7 @@
 
   networking.hostName = "kitsault";
   networking.firewall.allowPing = true;
-  networking.wireless.enable = true;
+  # networking.wireless.enable = true; # not compatible with networkmanager
   networking.networkmanager.enable = true;
 
   services.openssh = {
