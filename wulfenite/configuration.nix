@@ -5,14 +5,14 @@
 { config, pkgs, ... }:
 
 let 
-  unstable = import <unstable> {};
+  # unstable = import <unstable> {};
 in
 {
   imports =
     [
       # Include the results of the hardware scan.
       ./hardware-configuration.nix     
-      <home-manager/nixos>
+      # <home-manager/nixos>
     ];
 
 
@@ -117,17 +117,18 @@ in
     description = "conrad";
     extraGroups = [ "networkmanager" "wheel" "libvirtd" "adbusers" "plugdev" ];
     packages = with pkgs; [
-      home-manager
-      unstable.firefox
-      unstable.alacritty
+      #home-manager
+      # unstable.firefox
+      # unstable.alacritty
+      firefox
     #  thunderbird
     ];
   };
 
-  home-manager.users.conrad = { pkgs, ... }: {
-    home.packages = [ pkgs.atool pkgs.httpie ];
-    programs.bash.enable = true;
-  };
+  #home-manager.users.conrad = { pkgs, ... }: {
+  #  home.packages = [ pkgs.atool pkgs.httpie ];
+  #  programs.bash.enable = true;
+  #};
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
