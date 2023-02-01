@@ -1,6 +1,9 @@
 { config, ... }:
 {
-  #imports = [ <nixpkgs/nixos/modules/profiles/qemu-guest.nix> ];
+  imports = [
+	# <nixpkgs/nixos/modules/profiles/qemu-guest.nix>
+	./kitsault/disks/STORE.nix
+  ];
   boot.loader.grub.device = "/dev/sda";
   fileSystems."/" = { device = "/dev/sda5"; fsType = "ext4"; };
   boot.blacklistedKernelModules = [ "rtl8xxxu" ];
