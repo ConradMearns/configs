@@ -8,6 +8,7 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
+    cryptsetup # needed for kitsault/disks/STORE.nix
     zerotierone
     git
     vim
