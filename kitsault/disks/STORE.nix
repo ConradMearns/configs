@@ -6,6 +6,13 @@
 		keyFileSize = 4096;
 		keyFileOffset = 1052688;
 		keyFile = "/dev/disk/by-label/KEY";
-		options = [ "nofail" ];
+	};
+
+	fileSystems = {
+    		"/store" = {
+			device = "/dev/mapper/store";
+			fsType = "ext4";
+			options = [ "nofail" ];
+		};
 	};
 }
