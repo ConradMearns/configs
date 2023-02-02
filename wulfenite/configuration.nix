@@ -23,12 +23,12 @@ in
 
 
 # Syncthing
-  services.syncthing = {
-    enable = true;
-    user = "conrad";
-    dataDir = "/home/conrad/Documents";
-    configDir = "/home/conrad/Documents/.config/syncthing";
-  };
+#  services.syncthing = {
+#    enable = true;
+#    user = "conrad";
+#    dataDir = "/home/conrad/Documents";
+#    configDir = "/home/conrad/Documents/.config/syncthing";
+#  };
 
 
 
@@ -110,20 +110,6 @@ in
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.conrad = {
-    isNormalUser = true;
-    description = "conrad";
-    extraGroups = [ "networkmanager" "wheel" "libvirtd" "adbusers" "plugdev" ];
-    packages = with pkgs; [
-      #home-manager
-      # unstable.firefox
-      # unstable.alacritty
-      firefox
-    #  thunderbird
-    ];
-  };
 
   #home-manager.users.conrad = { pkgs, ... }: {
   #  home.packages = [ pkgs.atool pkgs.httpie ];
