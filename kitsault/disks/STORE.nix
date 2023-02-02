@@ -6,5 +6,6 @@
 		keyFileSize = 4096;
 		keyFileOffset = 1052688;
 		keyFile = "/dev/disk/by-label/KEY";
+		options = [ "nofail" ];
 	};
 }
