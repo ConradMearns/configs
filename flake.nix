@@ -9,6 +9,7 @@
       modules = [
         ./kitsault/configuration.nix
 	./kitsault/disks/STORE.nix
+	./zerotier-kangwang.nix
 	./users/conrad.nix
       ];
     };
@@ -20,6 +21,7 @@
       modules = [
 	./wulfenite/configuration.nix
 	./users/conrad.nix
+	# ./zerotier-kangwang.nix
       ];
     };
   };
