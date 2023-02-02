@@ -8,6 +8,7 @@
       specialArgs = attrs;
       modules = [
         ./kitsault/configuration.nix
+	./kitsault/disks/STORE.nix
 	./users/conrad.nix
       ];
     };
