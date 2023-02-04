@@ -15,6 +15,7 @@
 				path = "/store";
 				writeable = "yes";
 				browseable = "yes";
+				"force user" = "root";
 			};
 		};		
 	};
