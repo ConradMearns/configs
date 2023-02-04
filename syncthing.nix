@@ -5,6 +5,6 @@
 		enable = true;
 		openDefaultPorts = true;
 		dataDir = "/store/syncthing/";
-		guiAddress = "0.0.0.0:7962";
+		guiAddress = "0.0.0.0:8384";
 	};
 }
