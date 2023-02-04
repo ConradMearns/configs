@@ -7,6 +7,7 @@
       system = "x86_64-linux";
       specialArgs = attrs;
       modules = [
+	./kitsault/disks/samba-STORE.nix
 	./configuration.nix
 	./syncthing.nix
         ./kitsault/configuration.nix
