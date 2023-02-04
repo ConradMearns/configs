@@ -7,6 +7,7 @@
       system = "x86_64-linux";
       specialArgs = attrs;
       modules = [
+	./configuration.nix
         ./kitsault/configuration.nix
 	./kitsault/disks/STORE.nix
 	./zerotier-kangwang.nix
@@ -19,6 +20,7 @@
       system = "x86_64-linux";
       specialArgs = attrs;
       modules = [
+	./configuration.nix
 	./wulfenite/configuration.nix
 	./users/conrad.nix
 	# ./zerotier-kangwang.nix
