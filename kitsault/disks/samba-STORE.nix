@@ -1,4 +1,4 @@
-{ .. }:
+{ ... }:
 
 {
 	services.samba-wsdd.enable = true;
