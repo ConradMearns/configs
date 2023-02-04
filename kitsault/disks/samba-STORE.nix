@@ -8,6 +8,22 @@
 	services.samba = {
 		enable = true;
 		securityType = "user";
+
+		extraConfig = ''
+			workgroup = WORKGROUP
+			server string = kitsault
+			netbios name = kitsault
+			security = user 
+			#use sendfile = yes
+			#max protocol = smb2
+			# note: localhost is the ipv6 localhost ::1
+			#hosts allow = 192.168.0. 127.0.0.1 localhost
+			hosts allow = 0.0.0.0/0 127.0.0.1 localhost
+			#hosts deny = 0.0.0.0/0
+			guest account = nobody
+			map to guest = bad user
+		'';
+
 		shares = {
 			public = {
 				path = "/store/";
