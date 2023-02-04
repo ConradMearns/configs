@@ -7,7 +7,8 @@
 
 	services.samba = {
 		enable = true;
-		securityType = "user";
+		#securityType = "user";
+		enableNmbd = true;
 
 		extraConfig = ''
 			workgroup = WORKGROUP
@@ -26,14 +27,13 @@
 
 		shares = {
 			public = {
-				path = "/store/";
+				path = "/store";
 				browseable = "yes";
-				"read only" = "no";
-				#"guest ok" = "yes";
-				"create mask" = "0644";
-				"directory mask" = "0755";
-				#"force user" = "username";
-				#"force group" = "groupname";
+				"writable" = "yes";
+				"guest ok" = "yes";
+				#"create mask" = "0644";
+				#"directory mask" = "0755";
+				"force user" = "conrad";
 			};
 		};
 	};
