@@ -8,6 +8,7 @@
       specialArgs = attrs;
       modules = [
 	./configuration.nix
+	./syncthing.nix
         ./kitsault/configuration.nix
 	./kitsault/disks/STORE.nix
 	./zerotier-kangwang.nix
