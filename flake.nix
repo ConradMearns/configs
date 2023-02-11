@@ -7,13 +7,13 @@
       system = "x86_64-linux";
       specialArgs = attrs;
       modules = [
-        ./kitsault/disks/samba-STORE.nix
         ./configuration.nix
-        ./syncthing.nix
+        ./users/conrad.nix
         ./kitsault/configuration.nix
         ./kitsault/disks/STORE.nix
+        ./kitsault/disks/samba-STORE.nix
+        ./syncthing.nix
         ./zerotier-kangwang.nix
-        ./users/conrad.nix
       ];
     };
 
@@ -23,8 +23,8 @@
       specialArgs = attrs;
       modules = [
         ./configuration.nix
-        ./wulfenite/configuration.nix
         ./users/conrad.nix
+        ./wulfenite/configuration.nix
         # ./zerotier-kangwang.nix
       ];
     };
@@ -35,10 +35,11 @@
       system = "x86_64-linux";
       specialArgs = attrs;
       modules = [
-        ./molybdenite/boot.nix
         ./configuration.nix
-        ./molybdenite/configuration.nix
         ./users/conrad.nix
+        ./molybdenite/luks.nix
+        ./molybdenite/configuration.nix
+        # ./zerotier-kangwang.nix
       ];
     };
 
