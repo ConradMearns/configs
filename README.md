@@ -19,3 +19,10 @@ ssh-keygen -t ed25519
 ```bash
 gh auth login
 ```
+
+
+# Switch repo to SSH
+
+```bash
+git remote set-url origin git@github.com:ConradMearns/.dot.git
+```
