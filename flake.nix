@@ -39,7 +39,8 @@
         ./users/conrad.nix
         ./molybdenite/luks.nix
         ./molybdenite/configuration.nix
-        # ./zerotier-kangwang.nix
+        ./zerotier-kangwang.nix
+        ./obsidian.nix
       ];
     };
 

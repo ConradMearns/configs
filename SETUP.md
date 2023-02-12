@@ -31,3 +31,11 @@ ah, we cannot iuse `hostnamectl` to set the hostname temporarily, hm
 Copying this websitye - I love it - because I don't have obsidian on here yet
 
 https://chrishayward.xyz/dotfiles/
+
+---
+
+To build, switch to, and rename host to molybdenite
+
+```
+sudo nixos-rebuild switch --flake .#molybdenite
+```
