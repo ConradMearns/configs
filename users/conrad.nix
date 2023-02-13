@@ -5,8 +5,11 @@
     isNormalUser = true;
     description = "conrad";
     extraGroups = [ "networkmanager" "wheel" ];
+
     packages = with pkgs; [
-	firefox	
+	firefox
+	gh
+	vscode
     ];
   };
 }
