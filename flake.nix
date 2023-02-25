@@ -41,6 +41,7 @@
         ./molybdenite/configuration.nix
         ./zerotier-kangwang.nix
         ./obsidian.nix
+        ./fonts.nix
       ];
     };
 
