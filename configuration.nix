@@ -6,5 +6,6 @@
 		git
 		gh
 		direnv
+		apfs-fuse
 	];
 }
