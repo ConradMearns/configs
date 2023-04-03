@@ -12,8 +12,15 @@
 		avahi
 	];
 
-	services = {
-		avahi.enable = true;
-		avahi.nssmdns = true;
+	services.avahi = {
+		enable = true;
+		publish = {
+			enable = true;
+			addresses = true;
+			workstation = true;
+		};
+		nssmdns = true;
 	};
+
+
 }
