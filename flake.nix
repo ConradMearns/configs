@@ -1,8 +1,7 @@
 {
-  inputs.nixpkgs.url = github:NixOS/nixpkgs;
-  # inputs.unstable.url = "github:NixOS/nixpkgs-unstable";
+  inputs.nixpkgs.url = github:NixOS/nixpkgs/nixpkgs-unstable;
 
-  outputs = { self, nixpkgs, ... }@attrs: {
+  outputs = { self, nixpkgs, unstable, ... }@attrs: {
 
     nixosConfigurations.kitsault = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
@@ -45,6 +44,8 @@
         ./zerotier-kangwang.nix
         ./obsidian.nix
         ./fonts.nix
+
+        ./kitsault/cockpit.nix
       ];
     };
 
