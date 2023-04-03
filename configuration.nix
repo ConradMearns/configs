@@ -7,6 +7,6 @@
 		gh
 		direnv
 		apfs-fuse
-		nss-mdns
+		nssmdns
 	];
 }
