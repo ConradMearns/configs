@@ -2,7 +2,10 @@
 {
 
   # environment.systemPackages = [  ];
-  services.deluge.enable = true;
-  services.deluge.web = true;
+  services.deluge = {
+    enable = true;
+    dataDir = "/store/delugeData";
+    web.enable = true;
+  };
 
 }
