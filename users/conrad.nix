@@ -10,6 +10,7 @@
 	firefox
 	gh
 	vscode
+	google-chrome
     ];
   };
 }

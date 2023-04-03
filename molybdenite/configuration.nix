@@ -2,6 +2,7 @@
 {
   imports =
     [
+      ./samba-client.nix     
       ./hardware-configuration.nix     
     ];
 
@@ -23,10 +24,6 @@
 # ADB
   programs.adb.enable = true;
   # users.users.<your-user>.extraGroups = ["adbusers"];
-
-# SAMBA Client for GNOME file browser
-  services.gvfs.enable = true;
-
 
   # # Bootloader.
   # boot.loader.systemd-boot.enable = true;

@@ -1,5 +1,6 @@
 {
   inputs.nixpkgs.url = github:NixOS/nixpkgs;
+  # inputs.unstable.url = "github:NixOS/nixpkgs-unstable";
 
   outputs = { self, nixpkgs, ... }@attrs: {
 
@@ -13,6 +14,7 @@
         ./kitsault/disks/STORE.nix
         ./kitsault/disks/samba-STORE.nix
         ./kitsault/octoprint.nix
+        ./kitsault/cockpit.nix
         ./syncthing.nix
         ./zerotier-kangwang.nix
       ];
