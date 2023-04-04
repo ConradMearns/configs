@@ -89,10 +89,11 @@
    virt-manager
    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
    libusb
-   pkgs.rtl-sdr
+   rtl-sdr
    gqrx
    usbutils
    pciutils
+   cura
   #  wget
   ];
 
@@ -104,6 +105,8 @@
     enable = true;
     passwordAuthentication = true;
   };
+
+  services.xserver.displayManager.sddm.enableHidpi = true;
   
-  system.stateVersion = "22.05"; # Did you read the comment?
+  system.stateVersion = "22.11"; # Did you read the comment?
 }
