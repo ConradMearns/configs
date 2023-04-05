@@ -12,6 +12,8 @@
 		avahi
 	];
 
+	nix.trustedUsers = [ "conrad" ];
+
 	services.avahi = {
 		enable = true;
 		publish = {
