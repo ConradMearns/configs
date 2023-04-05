@@ -17,6 +17,7 @@
         ./kitsault/deluge.nix
         ./syncthing.nix
         ./zerotier-kangwang.nix
+        ./mdns-publisher/mdns-publisher.nix
       ];
     };
 

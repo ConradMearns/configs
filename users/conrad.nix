@@ -7,10 +7,10 @@
     extraGroups = [ "networkmanager" "wheel" ];
 
     packages = with pkgs; [
-	firefox
-	gh
-	vscode
-	google-chrome
+      firefox
+      gh
+      vscode
+      google-chrome
     ];
   };
 }
