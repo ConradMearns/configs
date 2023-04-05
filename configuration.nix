@@ -12,7 +12,8 @@
 		avahi
 	];
 
-	nix.trustedUsers = [ "conrad" ];
+	nix.settings.trusted-users = [ "conrad" ];
+	security.sudo.wheelNeedsPassword = false;
 
 	services.avahi = {
 		enable = true;

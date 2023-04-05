@@ -6,10 +6,10 @@ nixos-rebuild switch --flake .
 
 ```bash
 nixos-rebuild --flake .#kitsault \
+    --use-remote-sudo \
     --build-host conrad@kitsault.local \
     --target-host conrad@kitsault.local \
-    --use-remote-sudo \
-    switch
+    switch -j auto
 ```
 
 # zerotier
