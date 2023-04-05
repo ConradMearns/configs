@@ -9,7 +9,7 @@ nixos-rebuild --flake .#kitsault \
     --use-remote-sudo \
     --build-host conrad@kitsault.local \
     --target-host conrad@kitsault.local \
-    switch -j auto
+    switch
 ```
 
 # zerotier
