@@ -43,7 +43,19 @@
 			enable = true;
 			addresses = true;
 			workstation = true;
+			domain = true;
 		};
+		# extraConfig = ''
+		# [server]
+		# entries-per-entry-group-max=32
+		# enable-dbus=yes
+
+		# [publish]
+		# publish-hinfo=yes
+		# publish-workstation=yes
+		# disable-publishing=no
+		# disable-user-service-publishing=no
+		# '';
 		nssmdns = true;
 	};
 
