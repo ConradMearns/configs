@@ -1,4 +1,4 @@
-{ config, pkgs, ...}:
+{ config, pkgs, ... }:
 
 # 	let
 # 	my-python-packages = ps: with ps; [
@@ -21,43 +21,44 @@
 # in
 {
 
-	environment.systemPackages = with pkgs; [
-		vim
-		git
-		gh
-		direnv
-		apfs-fuse
+  environment.systemPackages = with pkgs; [
+    vim
+    git
+    gh
+    direnv
+    apfs-fuse
 
-		nssmdns
-		avahi
-		# mdns-publisher
-		# (pkgs.python3.withPackages my-python-packages)
-	];
+    nixfmt
 
-	nix.settings.trusted-users = [ "conrad" ];
-	security.sudo.wheelNeedsPassword = false;
+    nssmdns
+    avahi
+    # mdns-publisher
+    # (pkgs.python3.withPackages my-python-packages)
+  ];
 
-	services.avahi = {
-		enable = true;
-		publish = {
-			enable = true;
-			addresses = true;
-			workstation = true;
-			domain = true;
-		};
-		# extraConfig = ''
-		# [server]
-		# entries-per-entry-group-max=32
-		# enable-dbus=yes
+  nix.settings.trusted-users = [ "conrad" ];
+  security.sudo.wheelNeedsPassword = false;
 
-		# [publish]
-		# publish-hinfo=yes
-		# publish-workstation=yes
-		# disable-publishing=no
-		# disable-user-service-publishing=no
-		# '';
-		nssmdns = true;
-	};
+  services.avahi = {
+    enable = true;
+    publish = {
+      enable = true;
+      addresses = true;
+      workstation = true;
+      domain = true;
+    };
+    # extraConfig = ''
+    # [server]
+    # entries-per-entry-group-max=32
+    # enable-dbus=yes
 
+    # [publish]
+    # publish-hinfo=yes
+    # publish-workstation=yes
+    # disable-publishing=no
+    # disable-user-service-publishing=no
+    # '';
+    nssmdns = true;
+  };
 
 }

@@ -46,6 +46,7 @@
         ./zerotier-kangwang.nix
         ./obsidian.nix
         ./fonts.nix
+        ./vscode-server.nix
       ];
     };
 
