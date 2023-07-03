@@ -65,6 +65,7 @@
           ./molybdenite/configuration.nix
           ./zerotier-kangwang.nix
           ./obsidian.nix
+          ./minecraft.nix
           ./fonts.nix
           # nixos-hardware.nixosModules.dell-xps-13-9380
         ];
