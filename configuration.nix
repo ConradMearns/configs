@@ -37,6 +37,7 @@
   ];
 
   nix.settings.trusted-users = [ "conrad" ];
+  nix.settings.experimental-features = "nix-command flakes";
   security.sudo.wheelNeedsPassword = false;
 
   services.avahi = {

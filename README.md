@@ -12,6 +12,10 @@ nixos-rebuild --flake .#kitsault \
     switch
 ```
 
+```bash
+nix flake update --extra-experimental-features nix-command --extra-experimental-features flakes
+```
+
 # zerotier
 
 https://my.zerotier.com/network/e4da7455b2639267

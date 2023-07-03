@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
 	environment.systemPackages = [
-    pkgs.unstable.obsidian
+    pkgs.unstable.minecraft
     # pkgs.obsidian
   ];
 }
