@@ -106,6 +106,24 @@
     passwordAuthentication = true;
   };
 
+  # Dell XPS
+  boot.extraModprobeConfig = ''
+    options bbswitch load_state=-1 unload_state=1 nvidia-drm
+  '';
+
+  boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
+
+  boot.blacklistedKernelModules = [
+    "nouveau"
+    "rivafb"
+    "nvidiafb"
+    "rivatv"
+    "nv"
+    "uvcvideo"
+  ];
+  # services.xserver.libinput.touchpad.disableWhileTyping = false;
+
+  boot.kernelParams = [ "psmouse.synaptics_intertouch=0" ];
   services.xserver.displayManager.sddm.enableHidpi = true;
   
   system.stateVersion = "22.03"; # Did you read the comment?
