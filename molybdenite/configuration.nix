@@ -107,20 +107,26 @@
   };
 
   # Dell XPS
-  boot.extraModprobeConfig = ''
-    options bbswitch load_state=-1 unload_state=1 nvidia-drm
-  '';
+  services.xserver.videoDrivers = [ "displaylink" ];
 
-  boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
+  # Intended behavior not working
+  # boot.extraModprobeConfig = ''
+  #   options bbswitch load_state=-1 unload_state=1 nvidia-drm
+  # '';
 
-  boot.blacklistedKernelModules = [
-    "nouveau"
-    "rivafb"
-    "nvidiafb"
-    "rivatv"
-    "nv"
-    "uvcvideo"
-  ];
+  # boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
+
+  # boot.blacklistedKernelModules = [
+  #   "nouveau"
+  #   "rivafb"
+  #   "nvidiafb"
+  #   "rivatv"
+  #   "nv"
+  #   "uvcvideo"
+  # ];
+
+
+
   # services.xserver.libinput.touchpad.disableWhileTyping = false;
 
   boot.kernelParams = [ "psmouse.synaptics_intertouch=0" ];
