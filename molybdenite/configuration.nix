@@ -94,6 +94,8 @@
    usbutils
    pciutils
    cura
+  #  python311
+  #  unstable.python311Packages.tiktoken
   #  wget
   ];
 
@@ -107,29 +109,15 @@
   };
 
   # Dell XPS
-  services.xserver.videoDrivers = [ "displaylink" ];
+  services.xserver.videoDrivers = [ "nvidia" "intel" ];
+  # services.xserver.videoDrivers = [ "displaylink" ];
 
-  # Intended behavior not working
-  # boot.extraModprobeConfig = ''
-  #   options bbswitch load_state=-1 unload_state=1 nvidia-drm
-  # '';
-
-  # boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
-
-  # boot.blacklistedKernelModules = [
-  #   "nouveau"
-  #   "rivafb"
-  #   "nvidiafb"
-  #   "rivatv"
-  #   "nv"
-  #   "uvcvideo"
-  # ];
 
 
 
   # services.xserver.libinput.touchpad.disableWhileTyping = false;
 
-  boot.kernelParams = [ "psmouse.synaptics_intertouch=0" ];
+  boot.kernelParams = [ "psmouse.synaptics_intertouch=0" "i915.force_probe=8a52" ];
   services.xserver.displayManager.sddm.enableHidpi = true;
   
   system.stateVersion = "22.03"; # Did you read the comment?

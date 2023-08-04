@@ -8,10 +8,27 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
+  # Intended behavior not working
+  boot.extraModprobeConfig = ''
+    options bbswitch load_state=-1 unload_state=1 nvidia-drm
+  '';
+
+  boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
+
+  boot.blacklistedKernelModules = [
+    "nouveau"
+    "rivafb"
+    "nvidiafb"
+    "rivatv"
+    "nv"
+    "uvcvideo"
+  ];
+
+
   boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
-  boot.extraModulePackages = [ ];
+  # boot.extraModulePackages = [ ];
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/305864d5-675d-460d-988c-e09aa38b4a2e";

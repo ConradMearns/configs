@@ -63,6 +63,7 @@
           ./users/conrad.nix
           ./molybdenite/luks.nix
           ./molybdenite/configuration.nix
+          ./molybdenite/syncthing.nix
           ./zerotier-kangwang.nix
           ./obsidian.nix
           ./minecraft.nix
