@@ -109,7 +109,8 @@
   };
 
   # Dell XPS
-  services.xserver.videoDrivers = [ "nvidia" "intel" ];
+  services.xserver.videoDrivers = [ "intel" ];
+  # services.xserver.videoDrivers = [ "nvidia" "intel" ];
   # services.xserver.videoDrivers = [ "displaylink" ];
 
 
@@ -117,7 +118,7 @@
 
   # services.xserver.libinput.touchpad.disableWhileTyping = false;
 
-  boot.kernelParams = [ "psmouse.synaptics_intertouch=0" "i915.force_probe=8a52" ];
+  # boot.kernelParams = [ "psmouse.synaptics_intertouch=0" "i915.force_probe=8a52" ];
   services.xserver.displayManager.sddm.enableHidpi = true;
   
   system.stateVersion = "22.03"; # Did you read the comment?

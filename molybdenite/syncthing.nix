@@ -3,8 +3,9 @@
 {
 	services.syncthing = {
 		enable = true;
+		user = "conrad";
 		openDefaultPorts = true;
-		# dataDir = "~/syncthing/";
+		dataDir = "/home/conrad/";
 		guiAddress = "0.0.0.0:8384";
 	};
 

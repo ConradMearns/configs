@@ -11,6 +11,8 @@
       gh
       vscode
       google-chrome
+      nodejs
+      python3
     ];
   };
 }

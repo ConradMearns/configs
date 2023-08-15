@@ -5,10 +5,9 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [ # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -54,11 +53,12 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    cowsay
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
-  ];
+  environment.systemPackages = with pkgs;
+    [
+      cowsay
+      #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+      #  wget
+    ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -72,6 +72,31 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+
+  # UPS
+  power.ups = {
+    enable = true;
+    # mode = "standalone";
+    ups."CyberPower650VA" = {
+      driver = "usbhid-ups";
+      port = "auto";
+      description = "CyberPower650VA";
+    };
+  };
+
+  environment.etc."nut/upsd.conf".source = ./config/upsd.conf;
+  environment.etc."nut/upsd.users".source = ./config/upsd.users;
+  environment.etc."nut/upsmon.conf".source = ./config/upsmon.conf;
+
+  users.groups.nut.name = "nut";
+  users.users.local_mon = {
+    group = "nut";
+    isNormalUser = false;
+    isSystemUser = true;
+    createHome = true;
+    home = "/var/lib/nut";
+    hashedPassword = "xxxxxx";
+  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
