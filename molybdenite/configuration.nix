@@ -38,6 +38,14 @@
 
 
 
+# Steam
+programs.steam = {
+  enable = true;
+  remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+  dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+};
+hardware.opengl.driSupport32Bit = true; # Enables support for 32bit libs that steam uses
+
 
 
   networking.hostName = "molybdenite";
@@ -109,7 +117,8 @@
   };
 
   # Dell XPS
-  services.xserver.videoDrivers = [ "intel" ];
+  services.xserver.videoDrivers = [ "nvidia" ];
+  # services.xserver.videoDrivers = [ "intel" ];
   # services.xserver.videoDrivers = [ "nvidia" "intel" ];
   # services.xserver.videoDrivers = [ "displaylink" ];
 
