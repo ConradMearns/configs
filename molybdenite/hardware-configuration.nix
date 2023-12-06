@@ -24,10 +24,18 @@
     "uvcvideo"
   ];
 
-
-  boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" "btqca" "hci_uart" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
+  boot.kernelParams = [
+    "pcie.aspm=force"
+    "i915.enable_fbc=1"
+    "i915.enable_rc6=7"
+    "i915.lvds_downclock=1"
+    "i915.enable_guc_loading=1"
+    "i915.enable_guc_submission=1"
+    "i915.enable_psr=0"
+  ];
   # boot.extraModulePackages = [ ];
 
   fileSystems."/" =
