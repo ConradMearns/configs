@@ -74,29 +74,30 @@
   services.openssh.enable = true;
 
   # UPS
-  power.ups = {
-    enable = true;
-    # mode = "standalone";
-    ups."CyberPower650VA" = {
-      driver = "usbhid-ups";
-      port = "auto";
-      description = "CyberPower650VA";
-    };
-  };
+  # power.ups = {
+  #   enable = true;
+  #   # mode = "standalone";
+  #   ups."CyberPower650VA" = {
+  #     driver = "usbhid-ups";
+  #     port = "auto";
+  #     description = "CyberPower650VA";
+  #   };
+  # };
 
-  environment.etc."nut/upsd.conf".source = ./config/upsd.conf;
-  environment.etc."nut/upsd.users".source = ./config/upsd.users;
-  environment.etc."nut/upsmon.conf".source = ./config/upsmon.conf;
+  # environment.etc."nut/upsd.conf".source = ./config/upsd.conf;
+  # environment.etc."nut/upsd.users".source = ./config/upsd.users;
+  # environment.etc."nut/upsmon.conf".source = ./config/upsmon.conf;
 
-  users.groups.nut.name = "nut";
-  users.users.local_mon = {
-    group = "nut";
-    isNormalUser = false;
-    isSystemUser = true;
-    createHome = true;
-    home = "/var/lib/nut";
-    hashedPassword = "$6$39j2jdc4JNJc1rTa$MNEF0nlTt1za5ifoaUVVsZ6suq29LKgLYcodHk3h0cFFJYAlDwQwAEyJ4puJ0.B1.gdBZ6JtIRepS0qBX8GQZ0";
-  };
+  # users.groups.nut.name = "nut";
+  # users.users.local_mon = {
+  #   group = "nut";
+  #   isNormalUser = false;
+  #   isSystemUser = true;
+  #   createHome = true;
+  #   home = "/var/lib/nut";
+  #   hashedPassword = "$6$39j2jdc4JNJc1rTa$MNEF0nlTt1za5ifoaUVVsZ6suq29LKgLYcodHk3h0cFFJYAlDwQwAEyJ4puJ0.B1.gdBZ6JtIRepS0qBX8GQZ0";
+  # };
+  # END UPS
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
