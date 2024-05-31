@@ -95,7 +95,7 @@
     isSystemUser = true;
     createHome = true;
     home = "/var/lib/nut";
-    hashedPassword = "xxxxxx";
+    hashedPassword = "$6$39j2jdc4JNJc1rTa$MNEF0nlTt1za5ifoaUVVsZ6suq29LKgLYcodHk3h0cFFJYAlDwQwAEyJ4puJ0.B1.gdBZ6JtIRepS0qBX8GQZ0";
   };
 
   # Open ports in the firewall.
