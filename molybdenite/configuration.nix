@@ -1,27 +1,20 @@
-{ config, pkgs, ... }:
-{
-  imports =
-    [
-      ./samba-client.nix     
-      ./hardware-configuration.nix     
-    ];
+{ config, pkgs, ... }: {
+  imports = [ ./samba-client.nix ./hardware-configuration.nix ];
 
-
-# VIRT-MAN
+  # VIRT-MAN
   virtualisation.libvirtd.enable = true;
   programs.dconf.enable = true;
   #environment.systemPackages = with pkgs; [virt-manager];
 
+  # Syncthing
+  #  services.syncthing = {
+  #    enable = true;
+  #    user = "conrad";
+  #    dataDir = "/home/conrad/Documents";
+  #    configDir = "/home/conrad/Documents/.config/syncthing";
+  #  };
 
-# Syncthing
-#  services.syncthing = {
-#    enable = true;
-#    user = "conrad";
-#    dataDir = "/home/conrad/Documents";
-#    configDir = "/home/conrad/Documents/.config/syncthing";
-#  };
-
-# ADB
+  # ADB
   programs.adb.enable = true;
   # users.users.<your-user>.extraGroups = ["adbusers"];
 
@@ -35,18 +28,17 @@
   #   "/crypto_keyfile.bin" = null;
   # };
 
-
-
-
-# Steam
-programs.steam = {
-  enable = true;
-  remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-  dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-};
-hardware.opengl.driSupport32Bit = true; # Enables support for 32bit libs that steam uses
-
-
+  # Steam
+  programs.sway.enable = true;
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall =
+      true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall =
+      true; # Open ports in the firewall for Source Dedicated Server
+  };
+  hardware.opengl.driSupport32Bit =
+    true; # Enables support for 32bit libs that steam uses
 
   networking.hostName = "molybdenite";
   networking.networkmanager.enable = true;
@@ -94,17 +86,23 @@ hardware.opengl.driSupport32Bit = true; # Enables support for 32bit libs that st
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-   virt-manager
-   vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-   libusb
-   rtl-sdr
-   gqrx
-   usbutils
-   pciutils
-   cura
-  #  python311
-  #  unstable.python311Packages.tiktoken
-  #  wget
+    virt-manager
+    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    libusb
+    rtl-sdr
+    gqrx
+    usbutils
+    pciutils
+    cura
+
+    #  (dwarf-fortress.override { enableDFHack = true; })
+
+    #  python311
+    #  unstable.python311Packages.tiktoken
+    #  wget
+    # unstable.hello
+    unstable.ollama
+    # unstable.llama-scpp
   ];
 
   services.udev.packages = [ pkgs.rtl-sdr ];
@@ -122,13 +120,10 @@ hardware.opengl.driSupport32Bit = true; # Enables support for 32bit libs that st
   # services.xserver.videoDrivers = [ "nvidia" "intel" ];
   # services.xserver.videoDrivers = [ "displaylink" ];
 
-
-
-
   # services.xserver.libinput.touchpad.disableWhileTyping = false;
 
   # boot.kernelParams = [ "psmouse.synaptics_intertouch=0" "i915.force_probe=8a52" ];
   services.xserver.displayManager.sddm.enableHidpi = true;
-  
+
   system.stateVersion = "22.03"; # Did you read the comment?
 }

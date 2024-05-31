@@ -32,6 +32,12 @@
 
     nssmdns
     avahi
+
+    # for reSnap
+    ffmpeg
+    feh
+    lz4
+
     # mdns-publisher
     # (pkgs.python3.withPackages my-python-packages)
   ];
@@ -61,5 +67,16 @@
     # '';
     nssmdns = true;
   };
+
+  i18n.inputMethod.enabled = "ibus";
+  i18n.inputMethod.ibus.engines = with pkgs.ibus-engines; [ libpinyin ];
+
+  fonts.fontDir.enable = true;
+
+  # GIVES ACCESS TO ALL USERS for Lego NXT Modules connectesudo nixos-rebuild switch --flake .
+
+  services.udev.extraRules = ''
+    SUBSYSTEMS=="usb", ATTRS{idVendor}=="0694", ATTRS{idProduct}=="0002", MODE="0666"
+  '';
 
 }

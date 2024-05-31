@@ -1,7 +1,10 @@
 # configs
 
+
+
 ```bash
-nixos-rebuild switch --flake .
+nix flake update # used for updating the unstable lockfile
+sudo nixos-rebuild switch --flake .
 ```
 
 ```bash
