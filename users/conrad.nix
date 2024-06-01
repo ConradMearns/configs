@@ -10,7 +10,7 @@
       firefox
       gh
       vscode
-      google-chrome
+      # google-chrome
       nodejs
       python3
     ];

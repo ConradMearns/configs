@@ -34,7 +34,7 @@
           ./kitsault/configuration.nix
           ./kitsault/disks/STORE.nix
           ./kitsault/disks/samba-STORE.nix
-          ./kitsault/octoprint.nix
+          # ./kitsault/octoprint.nix
           ./kitsault/deluge.nix
           ./syncthing.nix
           ./zerotier-kangwang.nix
