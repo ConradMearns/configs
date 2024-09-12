@@ -113,4 +113,51 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "22.11"; # Did you read the comment?
 
+
+
+
+  # Photoprism
+  services.photoprism = {
+    enable = true;
+    package = pkgs.unstable.photoprism;
+    port = 2342;
+    originalsPath = "/var/lib/private/photoprism/originals";
+    address = "0.0.0.0";
+    settings = {
+      PHOTOPRISM_ADMIN_USER = "admin";
+      PHOTOPRISM_ADMIN_PASSWORD = "admin";
+      PHOTOPRISM_DEFAULT_LOCALE = "en";
+      PHOTOPRISM_DATABASE_DRIVER = "mysql";
+      PHOTOPRISM_DATABASE_NAME = "photoprism";
+      PHOTOPRISM_DATABASE_SERVER = "/run/mysqld/mysqld.sock";
+      PHOTOPRISM_DATABASE_USER = "photoprism";
+      PHOTOPRISM_SITE_URL = "http://kitsault.local:2342";
+      PHOTOPRISM_SITE_TITLE = "My PhotoPrism";
+    };
+  };
+
+  fileSystems."/var/lib/private/photoprism" =
+    { device = "/store/photoprism";
+      options = [ "bind" ];
+    };
+
+  fileSystems."/var/lib/private/photoprism/originals" =
+    { device = "/store/syncthing/";
+      options = [ "bind" ];
+    };
+
+  services.mysql = {
+    enable = true;
+    dataDir = "/store/mysql";
+    package = pkgs.mariadb;
+    ensureDatabases = [ "photoprism" ];
+    ensureUsers = [ {
+      name = "photoprism";
+      ensurePermissions = {
+        "photoprism.*" = "ALL PRIVILEGES";
+      };
+    } ];
+  };
+
+
 }

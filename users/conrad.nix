@@ -4,8 +4,7 @@
   users.users.conrad = {
     isNormalUser = true;
     description = "conrad";
-    extraGroups = [ "networkmanager" "wheel" ];
-
+    extraGroups = [ "networkmanager" "wheel" "plugdev"];
     packages = with pkgs; [
       firefox
       gh

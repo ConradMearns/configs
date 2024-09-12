@@ -6,7 +6,7 @@
   # https://github.com/msteen/nixos-vscode-server
   # inputs.nixpkgs.url = github:NixOS/nixpkgs/nixpkgs-unstable;
 
-  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.11";
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
   inputs.nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
   inputs.vscode-server.url = "github:msteen/nixos-vscode-server";
 
